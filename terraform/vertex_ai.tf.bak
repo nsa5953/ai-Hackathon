@@ -1,0 +1,64 @@
+provider "google" {
+  project = var.project_id
+  region = var.region
+}
+
+resource "google_storage_bucket" "vertex_ai_bucket" {
+  name = var.bucket_name
+  location = var.region
+}
+
+resource "google_artifact_registry_repository" "vertex_ai_repo" {
+  provider = google-beta
+  project = var.project_id
+  location = var.region
+  repository_id = "vertex-ai-repo"
+  format = "docker"
+}
+
+resource "google_vertex_ai_training_pipeline" "pipeline" {
+  display_name = "vertex-ai-training-terraform-pipeline"
+  input_data_config {
+    dataset_id = google_vertex_ai_dataset.dataset.id
+    fraction_split {
+      training_fraction = 0.8
+      validation_fraction = 0.1
+      test_fraction = 0.1
+    }
+  }
+
+  model_to_upload {
+    display_name = "vertex-ai-model_tf"
+  }
+
+  training_task_definition = "gs://google-cloud-aiplatform/schema/trainingjob/definition/custom_task_1.0.0.yaml"
+  training_task_inputs {
+    key = "worker_pool_specs"
+    value = jsonencode([{
+      machine_spec = {
+        machine_type = "n1-standard-4"
+      }
+      replica_count = 1
+      python_package_spec = {
+        executor_image_uri = "us-docker.pkg.dev/vertex-ai/training/tf-cpu.2-2:latest"
+        package_uris = ["gs://my-bucket/path/to/your/package/trainer-0.1.tar.gz"]
+        python_module = "trainer.task"
+      }
+    }])
+  }
+}
+
+resource "google_vertex_ai_dataset" "dataset" {
+  display_name = "vertex-ai-dataset"
+  metadata_schema_uri = "gs://google-cloud-aiplatform/schema/dataset/metadata/image_1.0.0.yaml"
+  labels = {
+    key1 = "value1"
+  }
+  gcs_source {
+    uris = ["gs://my-bucket/path/to/your/data/*"]
+  }
+}
+
+output "bucket_name" {
+  value = google_storage_bucket.vertex_ai_bucket.name
+}

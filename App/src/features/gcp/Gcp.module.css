@@ -1,0 +1,78 @@
+.main {
+  text-align: left;
+  border-collapse: collapse;
+  margin-top:10px;
+  box-shadow: 0px 0px 5px #999;
+}
+.header {
+  text-transform: uppercase;
+  background-color: #8f8f8f;
+  color: #ffffff;
+  font-weight: 400;
+  position: sticky;
+  top: -5px;
+  z-index: 1;
+}
+
+.dataCoulmn{
+  padding:14px;
+}
+
+.data{
+  padding:14px;   
+  position: relative;
+  padding-right: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+tr.row:nth-child(even) {background-color: #FFF;border-bottom: 1px solid #dddddd;}
+tr.row:nth-child(odd) {background-color: #f5f5f5;border-bottom: 1px solid #dddddd;}
+tr.row:hover{background-color: #ededed;}
+
+
+.download{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: green;
+  font-size: 20px;
+  font-weight: 900;
+}
+.btn {
+  background-color: #6b92dbeb;
+  color: #fff;
+  padding: 10px;
+  margin-left: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid #3261b7;
+  border-radius: 7px;
+  font-weight: 600;
+}
+.btn:active {
+  color:#ccc
+}
+.btn:hover {
+  box-shadow: #3261b7 2px 2px 2px;
+}
+.gcpLogTable {
+  display: flex;
+  flex: 1;
+  background: #fff;
+  padding: 5px 20px;
+  height: 87vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.title{
+  font-weight: 500;
+  text-align: left;
+  padding-left: 15px;
+  font-size: 16px;
+}

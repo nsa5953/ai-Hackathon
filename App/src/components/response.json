@@ -1,0 +1,63 @@
+{
+    "data" : [{
+        "id": 1,
+        "image": "../static/images/avatar/1.jpg",
+        "relation": "father",
+        "gender": "M",
+        "name": "Vishal Patil",
+        "address": "Pune",
+        "description": "",
+        "moreInfo": "",
+        "events" : [
+            {
+                "description": "events description ",
+                "gallery": ["img1","img2"]
+            },
+            {
+                "description": "events description ",
+                "gallery": ["img1","img2"]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "image": "../static/images/avatar/2.jpg",
+        "relation": "Mother",
+        "gender": "F",
+        "name": "Vishal Patil",
+        "address": "Pune",
+        "description": "",
+        "moreInfo": "",
+        "events" : [
+            {
+                "description": "events description ",
+                "gallery": ["img1","img2"]
+            },
+            {
+                "description": "events description ",
+                "gallery": ["img1","img2"]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "image": "../static/images/avatar/3.jpg",
+        "relation": "sister",
+        "gender": "F",
+        "name": "Vishal Patil",
+        "address": "Pune",
+        "description": "",
+        "moreInfo": "",
+        "events" : [
+            {
+                "description": "events description ",
+                "gallery": ["img1","img2"]
+            },
+            {
+                "description": "events description ",
+                "gallery": ["img1","img2"]
+            }
+        ]
+    }
+    ]
+}

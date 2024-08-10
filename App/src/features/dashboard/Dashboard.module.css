@@ -1,0 +1,235 @@
+body{
+  color: #4f4f4f;
+  background-color: rgb(237 237 237);
+}
+
+.card_container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;  
+  flex:1;
+  gap: 5px;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #7a787852;
+  margin: 5px 0px;
+  border-radius: 5px;
+  position: relative;
+  min-width: 244px;
+}
+
+.card_active {
+  display: block;
+}
+.card_opened {
+  /* -webkit-transition: background 0.5s; 
+  -moz-transition: background 0.5s; 
+  -ms-transition: background 0.5s; 
+  -o-transition: background 0.5s; 
+  transition: background 0.5s; */
+  height: 108px;
+  background: #ced5d4;
+}
+
+.card:hover {
+  background: #ced5d4;
+}
+
+.card_inactive {
+  display: none;
+}
+.card_closed {
+  height:70px;
+  background: #ffffff;
+}
+.title{
+  font-size: 18px;
+  font-weight: 500;
+  margin:10px;
+  text-align: left;
+}
+.discount{
+  position: absolute;
+  right: 5px;
+  color: rgb(40, 123, 40);
+  font-weight: 500;
+  font-size: 12px;
+  margin:4px;
+}
+.graph{
+  position: absolute;
+  right: 5px;
+  top: 17px;
+  color: rgb(181 233 76);
+  margin: 5px;
+  font-weight: 600;
+  font-size: 23px;
+  padding: 0px 6px 4px 6px;
+  cursor: pointer;
+  border: 1px solid #7465650a;
+  border-radius: 5px;
+  background: #ffffffba;
+}
+.operations {
+  max-width: 300px;
+  margin: 0px 2px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding-top:20px;  
+}
+.filter_container{
+  display: flex;
+  flex-direction: row;
+}
+.filterBrand {
+  line-height: 40px;
+}
+.filter {
+  height: 40px;
+  min-width: 200px;
+  border: 1px solid #7a787852;
+  border-radius: 10px;
+}
+.hack{
+  display: flex;
+  height: 90vh;
+  padding: 0px 30px;  
+  background-color: rgb(237 237 237);  
+}
+.search {
+  margin: 5px 0px;
+  border: 1px solid #7a787852;
+  border-radius: 10px;
+  height: 30px;
+  width: 400px;
+}
+.reset {
+  margin:5px 0px;
+  border: 1px solid #7a787852;
+  border-radius: 10px;
+  height: 30px;
+  width:60px;
+
+}
+.chart {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.highChart {
+  border: 1px solid #7a787852;
+  border-radius: 5px;
+  margin:0px 0px 2px 2px;
+}
+.main {
+
+}
+.header {
+  padding: 0px 50px;
+  display: flex;
+  flex-direction: revert;
+  height: 64px;
+  line-height: 64px;
+  font-weight: 500;
+  align-items: center;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 2px;
+}
+
+.logo {
+  font-size: 30px;
+}
+.button {
+  visibility: hidden;
+
+}
+.nav {
+}
+.nav_a {
+  padding: 22px 20px;
+  text-decoration: none;
+}
+.nav_a:active {
+  color: #ccc
+}
+.nav_active {  
+  border-bottom: 2px solid #746565;
+  padding: 22px 20px;
+  text-decoration: none;
+  background: #ededed;
+}
+.img {
+  height: 40px;
+  margin: 0px 50px 0px 30px;
+}
+
+
+/* CSS */
+.btn {
+  background-color: #6b92dbeb;
+  color: #fff;
+  padding: 10px;
+  margin: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid #3261b7;
+  border-radius: 7px;
+  max-width: 200px;
+}
+.btn:active {
+  color:#ccc
+}
+.chartData {
+  
+}
+
+.btnupload {
+  appearance: button;
+  background-color: #b0b0ff;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));
+  border: 1px solid #acaaef;
+    border-radius: 10px;
+    box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    font-family: Inter,sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    cursor: pointer;
+    margin: 10px;
+    padding: 5px 0px 5px 20px;
+    text-align: center;
+    max-width: 250px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.btnupload:active {
+  box-shadow: rgb(152 184 231) 0 1px 0 inset, rgb(20 135 163 / 87%) 0 3px 5px;
+}
+
+.imgUpload {
+  height: 50px;
+  width: 50px;
+  margin-left: 100px;
+  cursor: pointer;
+}
+.imgUpload:active {
+  height: 55px;
+  width: 55px;
+  margin-left: 100px;
+}
+
+.chartOuter {
+  display: flex;
+  flex-direction: column;
+}
+
+.chartInner {
+  display: flex;
+  flex-direction: row;
+}

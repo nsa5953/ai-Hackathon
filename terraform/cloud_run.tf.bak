@@ -1,0 +1,15 @@
+resource "google_cloud_run_v2_service" "tfc_cloud_run_service" {
+  name     = "tfc-cloud-run-service"
+  location = "us-central1"
+
+  template {
+    containers {
+      image = "us-central1-docker.pkg.dev/hack-team-dbvolt-hacksquad/dbvolthacksquad/react-app:3d0331d68a6d64a956055c04593d369b60fa08c9"
+    }
+    service_account = var.workload_sa_email
+  }
+}
+#
+output "tfc_cloud_run_service_url" {
+  value = google_cloud_run_v2_service.tfc_cloud_run_service.uri
+}
